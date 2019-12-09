@@ -1,7 +1,10 @@
-''' Automates the creation of a water surface based on estimated wave height.
-Subtracts DEM from water elevation to determine flooded area.
-Parameter[0] Note - choosing the Dam.gdb as the workspace will run a single dam. Choosing a folder will run on all dams in the folder. 
-'''
+# ------------------------------------------------------------------------------
+# Name: Create Flood Polygon
+# Desc: Automates the creation of a water surface based on estimated wave height.
+#     Subtracts DEM from water elevation to determine flooded area.
+#     Parameter[0] Note - choosing a geodatabase as the workspace will run a single dam. Choosing a folder will run on all dams in the folder. 
+# ------------------------------------------------------------------------------
+
 #Create points along river lines every x distance, starting at the dam location.
 def addWSEPoints(spacing, damID, flowPath, WSE_FC, WSE2_FC):
 
@@ -285,5 +288,3 @@ else:
                 delLayers(["WaveHtPts2", "Line3D", "Line3D", "Line3D_us", "Line3D_us", "LineRaster", "LineToGrid", "splitPt", "outSetNull", "flowPath1"])
                 fpGDB = os.path.join(os.path.dirname(gdb), "Layers\Layers.gdb")
                 delLayers([fpGDB, os.path.dirname(fpGDB)])
-
-
