@@ -1,11 +1,12 @@
-'''Geodatabase Setup Tool
-Prep: Create MXD with coordinate system that matches all of the input data.
-    Display in meters will mean geoprocessing uses meters for the horizontal unit. Create an attribute 'DamID' for naming geodatabases.
-    Have available the hydrology and DEM for surrounding counties as needed to cover the 2, 5, or 10 miles downstream of the dams.
-    Copy the GenericCounty folder and rename to match the county name. Also rename the geodatabase in the same manner.
-Process: Uses the AllDams feature class to identify dams in the specified county. Creates a GDB for each dam with the
-    necessary layers, including hydrology features and a DEM that covers the required distance downstream.
-'''
+# ------------------------------------------------------------------------------
+# Name: Geodatabase Setup Tool
+# Prep: Create MXD with coordinate system that matches all of the input data.
+#   Display in meters will mean geoprocessing uses meters for the horizontal unit. Create an attribute 'DamID' for naming geodatabases.
+#   Have available the hydrology and DEM for surrounding counties as needed to cover the 2, 5, or 10 miles downstream of the dams.
+#   Copy the GenericCounty folder and rename to match the county name. Also rename the geodatabase in the same manner.
+# Process: Uses the AllDams feature class to identify dams in the specified county. Creates a GDB for each dam with the
+#   necessary layers, including hydrology features and a DEM that covers the required distance downstream.
+# ------------------------------------------------------------------------------
 
 #Get streams within county (all line features)
 def copyStreamLines(gdb, hydroGDB):
@@ -157,4 +158,3 @@ for damID in damList:
                                 
     delList = ["AllDams", "buffer"+damID, "clipStreams", "County", "countyDams", "countyStreams", "unSplitStreams", "intersect", "clipDEM1", "clipDEM2", "clipDEM3"]
     delLayers(damWorkspace, delList)
-
