@@ -1,6 +1,9 @@
-'''Automates the ArcHydro tool: Trace feature by NextDownID attribute. However, it does not handle flow splits at this time.
-Parameter[0] Note - choosing the Dam.gdb as the workspace will run a single dam. Choosing a folder will run on all dams in the folder. 
-'''
+# ------------------------------------------------------------------------------
+# Name: Create Flow Path
+# Desc: Automates the ArcHydro tool: Trace feature by NextDownID attribute.
+#     However, it does not handle flow splits at this time.
+#     Parameter[0] Note - choosing a geodatabase as the workspace will run a single dam. Choosing a folder will run on all dams in the folder. 
+# ------------------------------------------------------------------------------
 
 #Get Hydro ID of first downstream line from dam point
 def getDSHydroID(workspace, streamsFC):
@@ -134,4 +137,4 @@ if len(fpList)>0:
     arcpy.AddWarning("The following flowPaths are shorter than 5 miles or contain multiple lines: " + ", ".join(fpList))
 else:
     arcpy.AddMessage("Flow path set up complete.")
-    
+   
