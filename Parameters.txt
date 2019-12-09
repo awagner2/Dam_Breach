@@ -1,0 +1,15 @@
+Setup GDB
+0. County.gdb Location (e.g. C:\Project\Oconee.gdb)			Workspace
+1. County name								String
+2. Folder containing DEM geodatabases (not the gdb itself)		Folder
+3. Folder containing hydrology geodatabases (not the gdb itself)	Folder
+4. List of DamIDs to include in setup.					Strings
+
+
+Create Flow Path
+0. Workspace - choosing the Dam.gdb will run a single dam. Choosing a folder will run on all dams in the folder. 
+
+Create Flood Polygon
+0. Workspace - choosing the Dam.gdb will run a single dam. Choosing a folder will run on all dams in the folder. 
+1. Output GDB
+2. Point Spacing, smaller spacing gives more detail.
